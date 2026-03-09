@@ -79,7 +79,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <SignUpButton mode="modal">
             <Button size="lg" className="rounded-full px-8">
-              Get started free
+              Sign Up Dude
             </Button>
           </SignUpButton>
           <SignInButton mode="modal">
@@ -135,7 +135,7 @@ export default function HomePage() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <SignUpButton mode="modal">
             <Button size="lg" className="rounded-full px-8">
-              Create free account
+              Sign Up Dude
             </Button>
           </SignUpButton>
         </div>
