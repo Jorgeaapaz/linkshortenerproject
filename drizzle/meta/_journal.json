@@ -1,0 +1,13 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1773158097134,
+      "tag": "0000_legal_strong_guy",
+      "breakpoints": true
+    }
+  ]
+}
