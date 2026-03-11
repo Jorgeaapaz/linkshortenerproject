@@ -8,6 +8,8 @@ import {
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
 import { CreateLinkDialog } from "./components/create-link-dialog";
+import { EditLinkDialog } from "./components/edit-link-dialog";
+import { DeleteLinkDialog } from "./components/delete-link-dialog";
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -27,9 +29,24 @@ export default async function DashboardPage() {
             <li key={link.id}>
               <Card>
                 <CardHeader className="pb-1">
-                  <CardTitle className="text-base font-mono">
-                    /{link.shortCode}
-                  </CardTitle>
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="text-base font-mono">
+                      /{link.shortCode}
+                    </CardTitle>
+                    <div className="flex items-center gap-1">
+                      <EditLinkDialog
+                        link={{
+                          id: link.id,
+                          originalUrl: link.originalUrl,
+                          shortCode: link.shortCode,
+                        }}
+                      />
+                      <DeleteLinkDialog
+                        linkId={link.id}
+                        shortCode={link.shortCode}
+                      />
+                    </div>
+                  </div>
                 </CardHeader>
                 <CardContent className="flex items-center justify-between gap-4">
                   <a
