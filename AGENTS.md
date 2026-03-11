@@ -2,27 +2,11 @@
 
 This file is the entry point for AI agents and LLMs working in this repository. It defines the coding standards, architectural patterns, and conventions that **must** be followed when reading, writing, or modifying code.
 
-**You MUST read all referenced `/docs` documents before making any changes to the codebase. This is mandatory — do not generate any code until you have read the relevant instruction files.**
-
 ---
 
 ## Project Summary
 
 A link-shortener web application. Authenticated users can create, manage, and track shortened URLs. Built with Next.js 16 App Router, TypeScript, Drizzle ORM on Neon (PostgreSQL), Clerk authentication, and shadcn/ui components styled with Tailwind CSS v4.
-
----
-
-## Documentation Index
-
-> ⚠️ **CRITICAL — NON-NEGOTIABLE**: You **MUST** read the relevant `/docs` instruction file(s) in full **BEFORE writing a single line of code**. Skipping this step is not permitted under any circumstance, regardless of how simple or familiar the task appears. If a task touches authentication, UI, database, or any other documented domain, open and read the corresponding file first.
-
-For detailed guidelines on specific topics, refer to the modular documentation in the `/docs` directory:
-
-| Document | Contents |
-|---|---|
-| [docs/auth.md](docs/auth.md) | Clerk authentication, protected routes, modal sign-in/sign-up, middleware, accessing current user |
-| [docs/ui.md](docs/ui.md) | shadcn/ui components, never building custom primitives, extending components, icons, `cn()` usage |
-
 
 ---
 

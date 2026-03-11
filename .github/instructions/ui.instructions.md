@@ -1,3 +1,7 @@
+---
+description: Read this before implementing or modifying any UI components. This file outlines the rules and best practices for using shadcn/ui as the sole UI component library in this application.
+---
+
 # UI Components — shadcn/ui
 
 All UI in this application is built exclusively with **shadcn/ui**. Do not create custom component primitives (buttons, inputs, cards, dialogs, etc.) — always use or extend a shadcn/ui component.

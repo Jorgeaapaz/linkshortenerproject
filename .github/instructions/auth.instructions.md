@@ -1,3 +1,8 @@
+---
+description: Read this before implementing or modifying any authentication-related features. This file outlines the rules and best practices for using Clerk as the sole authentication provider in this application.
+---
+
+
 # Authentication — Clerk
 
 All authentication in this application is handled exclusively by **Clerk**. No other auth libraries, custom session logic, or alternative providers should be used.
