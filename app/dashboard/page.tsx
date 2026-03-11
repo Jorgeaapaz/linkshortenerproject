@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ExternalLink } from "lucide-react";
+import { CreateLinkDialog } from "./components/create-link-dialog";
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -14,7 +15,10 @@ export default async function DashboardPage() {
 
   return (
     <div className="container mx-auto max-w-3xl py-10 px-4">
-      <h1 className="mb-6 text-2xl font-bold">My Links</h1>
+      <div className="mb-6 flex items-center justify-between">
+        <h1 className="text-2xl font-bold">My Links</h1>
+        <CreateLinkDialog />
+      </div>
       {links.length === 0 ? (
         <p className="text-muted-foreground">No links yet. Create your first one!</p>
       ) : (

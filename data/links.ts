@@ -9,3 +9,11 @@ export async function getLinksByUserId(userId: string) {
     .where(eq(links.userId, userId))
     .orderBy(links.createdAt);
 }
+
+export async function createLink(data: {
+  originalUrl: string;
+  shortCode: string;
+  userId: string;
+}) {
+  return db.insert(links).values(data);
+}
