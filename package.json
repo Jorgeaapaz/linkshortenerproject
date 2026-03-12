@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "clean": "node -e \"require('fs').rmSync('.next', { recursive: true, force: true })\" && echo Cleaned .next cache"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.0.1",
