@@ -22,17 +22,17 @@ All authentication in this application is handled exclusively by **Clerk**. No o
 Use Clerk's `clerkMiddleware` in `proxy.ts` to protect routes and handle redirects. DO NOT create a middleware.ts file use proxy.ts
 
 ```ts
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import { NextResponse } from 'next/server';
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-const isProtectedRoute = createRouteMatcher(['/dashboard(.*)']);
+const isProtectedRoute = createRouteMatcher(["/dashboard(.*)"]);
 
 export default clerkMiddleware(async (auth, req) => {
   const { userId } = await auth();
 
   // Redirect authenticated users away from homepage
-  if (userId && req.nextUrl.pathname === '/') {
-    return NextResponse.redirect(new URL('/dashboard', req.url));
+  if (userId && req.nextUrl.pathname === "/") {
+    return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
   // Protect dashboard routes
@@ -42,7 +42,7 @@ export default clerkMiddleware(async (auth, req) => {
 });
 
 export const config = {
-  matcher: ['/((?!_next|.*\\..*).*)'],
+  matcher: ["/((?!_next|.*\\..*).*)"],
 };
 ```
 
