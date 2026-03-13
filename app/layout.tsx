@@ -1,36 +1,36 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
 import {
   ClerkProvider,
   SignInButton,
   SignUpButton,
   Show,
   UserButton,
-} from "@clerk/nextjs";
-import { shadcn } from "@clerk/themes";
-import { Button } from "@/components/ui/button";
-import "./globals.css";
+} from '@clerk/nextjs'
+import { shadcn } from '@clerk/themes'
+import { Button } from '@/components/ui/button'
+import './globals.css'
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+})
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
-  title: "LinkShort — Shorten, Share & Track URLs",
+  title: 'LinkShort — Shorten, Share & Track URLs',
   description:
-    "A fast, secure link shortener. Create short URLs, track click analytics, and manage all your links from one dashboard.",
-};
+    'A fast, secure link shortener. Create short URLs, track click analytics, and manage all your links from one dashboard.',
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
     <html lang="en" className="dark">
@@ -58,5 +58,5 @@ export default function RootLayout({
         </ClerkProvider>
       </body>
     </html>
-  );
+  )
 }

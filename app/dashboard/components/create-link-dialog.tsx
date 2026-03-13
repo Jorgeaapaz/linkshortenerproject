@@ -1,47 +1,47 @@
-"use client";
+'use client'
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react'
+import { Button } from '@/components/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
-import { Plus } from "lucide-react";
-import { createLinkAction } from "./actions";
+} from '@/components/ui/dialog'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { cn } from '@/lib/utils'
+import { Plus } from 'lucide-react'
+import { createLinkAction } from './actions'
 
 export function CreateLinkDialog() {
-  const [open, setOpen] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [open, setOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [fieldErrors, setFieldErrors] = useState<{
-    originalUrl?: string[];
-    shortCode?: string[];
-  }>({});
+    originalUrl?: string[]
+    shortCode?: string[]
+  }>({})
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setFieldErrors({});
-    setIsSubmitting(true);
+    e.preventDefault()
+    setFieldErrors({})
+    setIsSubmitting(true)
 
-    const formData = new FormData(e.currentTarget);
+    const formData = new FormData(e.currentTarget)
     const result = await createLinkAction({
-      originalUrl: formData.get("originalUrl") as string,
-      shortCode: formData.get("shortCode") as string,
-    });
+      originalUrl: formData.get('originalUrl') as string,
+      shortCode: formData.get('shortCode') as string,
+    })
 
-    setIsSubmitting(false);
+    setIsSubmitting(false)
 
     if (result.success) {
-      setOpen(false);
-    } else if (result.error && typeof result.error === "object") {
+      setOpen(false)
+    } else if (result.error && typeof result.error === 'object') {
       setFieldErrors(
-        result.error as { originalUrl?: string[]; shortCode?: string[] }
-      );
+        result.error as { originalUrl?: string[]; shortCode?: string[] },
+      )
     }
   }
 
@@ -49,8 +49,8 @@ export function CreateLinkDialog() {
     <Dialog
       open={open}
       onOpenChange={(next) => {
-        setOpen(next);
-        if (!next) setFieldErrors({});
+        setOpen(next)
+        if (!next) setFieldErrors({})
       }}
     >
       <DialogTrigger asChild>
@@ -72,7 +72,7 @@ export function CreateLinkDialog() {
               type="url"
               placeholder="https://example.com/long-url"
               required
-              className={cn(fieldErrors.originalUrl && "border-destructive")}
+              className={cn(fieldErrors.originalUrl && 'border-destructive')}
             />
             {fieldErrors.originalUrl && (
               <p className="text-sm text-destructive">
@@ -87,7 +87,7 @@ export function CreateLinkDialog() {
               name="shortCode"
               placeholder="my-link"
               required
-              className={cn(fieldErrors.shortCode && "border-destructive")}
+              className={cn(fieldErrors.shortCode && 'border-destructive')}
             />
             {fieldErrors.shortCode && (
               <p className="text-sm text-destructive">
@@ -105,11 +105,11 @@ export function CreateLinkDialog() {
               Cancel
             </Button>
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Creating…" : "Create"}
+              {isSubmitting ? 'Creating…' : 'Create'}
             </Button>
           </div>
         </form>
       </DialogContent>
     </Dialog>
-  );
+  )
 }

@@ -1,53 +1,34 @@
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import {
-  Link2,
-  BarChart3,
-  ShieldCheck,
-  Zap,
-  Globe,
-  MousePointerClick,
-} from "lucide-react";
+import { SignInButton, SignUpButton } from '@clerk/nextjs'
+import { Button } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Link2, ShieldCheck, Zap, Globe } from 'lucide-react'
 
 const features = [
   {
     icon: Link2,
-    title: "Instant URL Shortening",
+    title: 'Instant URL Shortening',
     description:
-      "Turn any long URL into a clean, shareable short link in seconds. No friction, no hassle.",
-  },
-  {
-    icon: BarChart3,
-    title: "Click Analytics",
-    description:
-      "Track how many times each link has been clicked so you always know what's performing.",
+      'Turn any long URL into a clean, shareable short link in seconds. No friction, no hassle.',
   },
   {
     icon: ShieldCheck,
-    title: "Secure & Private",
+    title: 'Secure & Private',
     description:
-      "Your links are scoped to your account. Only you can view and manage them.",
+      'Your links are scoped to your account. Only you can view and manage them.',
   },
   {
     icon: Zap,
-    title: "Lightning Fast Redirects",
+    title: 'Lightning Fast Redirects',
     description:
-      "Built on edge infrastructure so every redirect happens in milliseconds.",
+      'Built on edge infrastructure so every redirect happens in milliseconds.',
   },
   {
     icon: Globe,
-    title: "Share Anywhere",
+    title: 'Share Anywhere Dude',
     description:
-      "Short links work everywhere — social media, emails, QR codes, you name it.",
+      'Short links work everywhere — social media, emails, QR codes, you name it.',
   },
-  {
-    icon: MousePointerClick,
-    title: "One-Click Management",
-    description:
-      "Copy, delete, and organize all your links from a single, clean dashboard.",
-  },
-];
+]
 
 export default function HomePage() {
   return (
@@ -56,24 +37,23 @@ export default function HomePage() {
       <section className="flex flex-col items-center justify-center gap-8 px-6 py-24 text-center md:py-36">
         <span
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full border border-border",
-            "bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
+            'inline-flex items-center gap-1.5 rounded-full border border-border',
+            'bg-muted px-3 py-1 text-xs font-medium text-muted-foreground',
           )}
         >
           <Link2 className="size-3" />
-          Simple · Fast · Trackable
+          Simple · Fast · Reliable
         </span>
 
         <h1 className="max-w-3xl text-4xl font-bold tracking-tight md:text-6xl">
           Shorten links.
           <br />
-          <span className="text-muted-foreground">Track every click.</span>
+          <span className="text-muted-foreground">Share them anywhere.</span>
         </h1>
 
         <p className="max-w-xl text-lg text-muted-foreground">
           LinkShort turns any long URL into a clean short link you can share
-          anywhere. Get real-time click analytics and manage all your links from
-          one dashboard.
+          anywhere. Manage all your links from one dashboard.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-3">
@@ -98,7 +78,8 @@ export default function HomePage() {
               Everything you need to manage links
             </h2>
             <p className="mt-3 text-muted-foreground">
-              A focused toolkit — nothing you don&apos;t need, everything you do.
+              A focused toolkit — nothing you don&apos;t need, everything you
+              do.
             </p>
           </div>
 
@@ -107,8 +88,8 @@ export default function HomePage() {
               <div
                 key={title}
                 className={cn(
-                  "flex flex-col gap-3 rounded-xl border border-border",
-                  "bg-card p-6 text-card-foreground"
+                  'flex flex-col gap-3 rounded-xl border border-border',
+                  'bg-card p-6 text-card-foreground',
                 )}
               >
                 <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
@@ -141,5 +122,5 @@ export default function HomePage() {
         </div>
       </section>
     </div>
-  );
+  )
 }
