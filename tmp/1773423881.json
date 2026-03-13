@@ -1,8 +1,0 @@
-{
-  "sessionId": "8cba6749-8ee7-4c7d-9d35-0fdde818cb47",
-  "timestamp": 1773423881348,
-  "cwd": "D:\\VSC\\GitHubCopilotIA\\linkshortenerproject",
-  "toolName": "report_intent",
-  "toolArgs": { "intent": "Creating /test-page" },
-  "toolResult": { "resultType": "success", "textResultForLlm": "Intent logged" }
-}

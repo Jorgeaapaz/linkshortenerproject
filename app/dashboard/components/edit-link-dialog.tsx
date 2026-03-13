@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { cn } from "@/lib/utils";
-import { Pencil } from "lucide-react";
-import { updateLinkAction } from "./actions";
+} from '@/components/ui/dialog';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
+import { Pencil } from 'lucide-react';
+import { updateLinkAction } from './actions';
 
 interface EditLinkDialogProps {
   link: {
@@ -39,15 +39,15 @@ export function EditLinkDialog({ link }: EditLinkDialogProps) {
     const formData = new FormData(e.currentTarget);
     const result = await updateLinkAction({
       id: link.id,
-      originalUrl: formData.get("originalUrl") as string,
-      shortCode: formData.get("shortCode") as string,
+      originalUrl: formData.get('originalUrl') as string,
+      shortCode: formData.get('shortCode') as string,
     });
 
     setIsSubmitting(false);
 
     if (result.success) {
       setOpen(false);
-    } else if (result.error && typeof result.error === "object") {
+    } else if (result.error && typeof result.error === 'object') {
       setFieldErrors(
         result.error as { originalUrl?: string[]; shortCode?: string[] },
       );
@@ -82,7 +82,7 @@ export function EditLinkDialog({ link }: EditLinkDialogProps) {
               defaultValue={link.originalUrl}
               placeholder="https://example.com/long-url"
               required
-              className={cn(fieldErrors.originalUrl && "border-destructive")}
+              className={cn(fieldErrors.originalUrl && 'border-destructive')}
             />
             {fieldErrors.originalUrl && (
               <p className="text-sm text-destructive">
@@ -98,7 +98,7 @@ export function EditLinkDialog({ link }: EditLinkDialogProps) {
               defaultValue={link.shortCode}
               placeholder="my-link"
               required
-              className={cn(fieldErrors.shortCode && "border-destructive")}
+              className={cn(fieldErrors.shortCode && 'border-destructive')}
             />
             {fieldErrors.shortCode && (
               <p className="text-sm text-destructive">
@@ -116,7 +116,7 @@ export function EditLinkDialog({ link }: EditLinkDialogProps) {
               Cancel
             </Button>
             <Button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? "Saving..." : "Save changes"}
+              {isSubmitting ? 'Saving...' : 'Save changes'}
             </Button>
           </div>
         </form>
