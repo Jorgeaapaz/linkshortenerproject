@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -10,9 +10,9 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog";
-import { Trash2 } from "lucide-react";
-import { deleteLinkAction } from "./actions";
+} from '@/components/ui/dialog';
+import { Trash2 } from 'lucide-react';
+import { deleteLinkAction } from './actions';
 
 interface DeleteLinkDialogProps {
   linkId: number;
@@ -46,7 +46,7 @@ export function DeleteLinkDialog({ linkId, shortCode }: DeleteLinkDialogProps) {
         <DialogHeader>
           <DialogTitle>Delete short link</DialogTitle>
           <DialogDescription>
-            Are you sure you want to delete{" "}
+            Are you sure you want to delete{' '}
             <strong className="font-semibold text-foreground">
               /{shortCode}
             </strong>
@@ -66,7 +66,7 @@ export function DeleteLinkDialog({ linkId, shortCode }: DeleteLinkDialogProps) {
             onClick={handleDelete}
             disabled={isDeleting}
           >
-            {isDeleting ? "Deleting..." : "Delete"}
+            {isDeleting ? 'Deleting...' : 'Delete'}
           </Button>
         </DialogFooter>
       </DialogContent>

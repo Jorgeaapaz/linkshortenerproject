@@ -52,17 +52,17 @@ npx shadcn@latest add input
 Import directly from the `@/components/ui` alias:
 
 ```tsx
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 ```
 
 Compose with `cn()` when adding conditional or extra classes:
 
 ```tsx
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 <Button
-  className={cn("w-full", isLoading && "opacity-50")}
+  className={cn('w-full', isLoading && 'opacity-50')}
   disabled={isLoading}
 >
   Submit
@@ -77,10 +77,10 @@ If a shadcn component needs repeated customization, wrap it — do not modify th
 
 ```tsx
 // components/submit-button.tsx
-import { Button, type ButtonProps } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button, type ButtonProps } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 export function SubmitButton({ className, ...props }: ButtonProps) {
-  return <Button className={cn("w-full", className)} {...props} />;
+  return <Button className={cn('w-full', className)} {...props} />;
 }
 ```

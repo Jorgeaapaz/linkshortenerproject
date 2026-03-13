@@ -1,10 +1,10 @@
-import { auth } from "@clerk/nextjs/server";
-import { getLinksByUserId } from "@/data/links";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ExternalLink } from "lucide-react";
-import { CreateLinkDialog } from "./components/create-link-dialog";
-import { EditLinkDialog } from "./components/edit-link-dialog";
-import { DeleteLinkDialog } from "./components/delete-link-dialog";
+import { auth } from '@clerk/nextjs/server';
+import { getLinksByUserId } from '@/data/links';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { ExternalLink } from 'lucide-react';
+import { CreateLinkDialog } from './components/create-link-dialog';
+import { EditLinkDialog } from './components/edit-link-dialog';
+import { DeleteLinkDialog } from './components/delete-link-dialog';
 
 export default async function DashboardPage() {
   const { userId } = await auth();
@@ -56,7 +56,7 @@ export default async function DashboardPage() {
                     <span className="truncate">{link.originalUrl}</span>
                   </a>
                   <span className="shrink-0 text-sm text-muted-foreground">
-                    {link.clicks} {link.clicks === 1 ? "click" : "clicks"}
+                    {link.clicks} {link.clicks === 1 ? 'click' : 'clicks'}
                   </span>
                 </CardContent>
               </Card>
