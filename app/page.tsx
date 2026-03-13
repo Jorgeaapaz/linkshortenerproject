@@ -1,32 +1,32 @@
-import { SignInButton, SignUpButton } from "@clerk/nextjs";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { Link2, ShieldCheck, Zap, Globe } from "lucide-react";
+import { SignInButton, SignUpButton } from '@clerk/nextjs';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { Link2, ShieldCheck, Zap, Globe } from 'lucide-react';
 
 const features = [
   {
     icon: Link2,
-    title: "Instant URL Shortening",
+    title: 'Instant URL Shortening',
     description:
-      "Turn any long URL into a clean, shareable short link in seconds. No friction, no hassle.",
+      'Turn any long URL into a clean, shareable short link in seconds. No friction, no hassle.',
   },
   {
     icon: ShieldCheck,
-    title: "Secure & Private",
+    title: 'Secure & Private',
     description:
-      "Your links are scoped to your account. Only you can view and manage them.",
+      'Your links are scoped to your account. Only you can view and manage them.',
   },
   {
     icon: Zap,
-    title: "Lightning Fast Redirects",
+    title: 'Lightning Fast Redirects',
     description:
-      "Built on edge infrastructure so every redirect happens in milliseconds.",
+      'Built on edge infrastructure so every redirect happens in milliseconds.',
   },
   {
     icon: Globe,
-    title: "Share Anywhere Now",
+    title: 'Share Anywhere Now',
     description:
-      "Short links work everywhere — social media, emails, QR codes, you name it.",
+      'Short links work everywhere — social media, emails, QR codes, you name it.',
   },
 ];
 
@@ -37,8 +37,8 @@ export default function HomePage() {
       <section className="flex flex-col items-center justify-center gap-8 px-6 py-24 text-center md:py-36">
         <span
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full border border-border",
-            "bg-muted px-3 py-1 text-xs font-medium text-muted-foreground",
+            'inline-flex items-center gap-1.5 rounded-full border border-border',
+            'bg-muted px-3 py-1 text-xs font-medium text-muted-foreground',
           )}
         >
           <Link2 className="size-3" />
@@ -59,7 +59,7 @@ export default function HomePage() {
         <div className="flex flex-wrap items-center justify-center gap-3">
           <SignUpButton mode="modal">
             <Button size="lg" className="rounded-full px-8">
-              Sign Now!
+              Sign Up!
             </Button>
           </SignUpButton>
           <SignInButton mode="modal">
@@ -88,8 +88,8 @@ export default function HomePage() {
               <div
                 key={title}
                 className={cn(
-                  "flex flex-col gap-3 rounded-xl border border-border",
-                  "bg-card p-6 text-card-foreground",
+                  'flex flex-col gap-3 rounded-xl border border-border',
+                  'bg-card p-6 text-card-foreground',
                 )}
               >
                 <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10">
@@ -116,7 +116,7 @@ export default function HomePage() {
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <SignUpButton mode="modal">
             <Button size="lg" className="rounded-full px-8">
-              Sign Now!
+              Sign Up!
             </Button>
           </SignUpButton>
         </div>
