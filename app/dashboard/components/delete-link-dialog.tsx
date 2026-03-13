@@ -1,7 +1,7 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -10,24 +10,24 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
-import { Trash2 } from 'lucide-react'
-import { deleteLinkAction } from './actions'
+} from "@/components/ui/dialog";
+import { Trash2 } from "lucide-react";
+import { deleteLinkAction } from "./actions";
 
 interface DeleteLinkDialogProps {
-  linkId: number
-  shortCode: string
+  linkId: number;
+  shortCode: string;
 }
 
 export function DeleteLinkDialog({ linkId, shortCode }: DeleteLinkDialogProps) {
-  const [open, setOpen] = useState(false)
-  const [isDeleting, setIsDeleting] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(false);
 
   async function handleDelete() {
-    setIsDeleting(true)
-    await deleteLinkAction(linkId)
-    setIsDeleting(false)
-    setOpen(false)
+    setIsDeleting(true);
+    await deleteLinkAction(linkId);
+    setIsDeleting(false);
+    setOpen(false);
   }
 
   return (
@@ -46,7 +46,7 @@ export function DeleteLinkDialog({ linkId, shortCode }: DeleteLinkDialogProps) {
         <DialogHeader>
           <DialogTitle>Delete short link</DialogTitle>
           <DialogDescription>
-            Are you sure you want to delete{' '}
+            Are you sure you want to delete{" "}
             <strong className="font-semibold text-foreground">
               /{shortCode}
             </strong>
@@ -66,10 +66,10 @@ export function DeleteLinkDialog({ linkId, shortCode }: DeleteLinkDialogProps) {
             onClick={handleDelete}
             disabled={isDeleting}
           >
-            {isDeleting ? 'Deleting...' : 'Delete'}
+            {isDeleting ? "Deleting..." : "Delete"}
           </Button>
         </DialogFooter>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
