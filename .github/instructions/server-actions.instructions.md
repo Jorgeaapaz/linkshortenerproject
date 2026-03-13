@@ -38,11 +38,11 @@ data/
 ## Server Action Template
 
 ```ts
-'use server';
+"use server";
 
-import { auth } from '@clerk/nextjs/server';
-import { z } from 'zod';
-import { createLink } from '@/data/links';
+import { auth } from "@clerk/nextjs/server";
+import { z } from "zod";
+import { createLink } from "@/data/links";
 
 const schema = z.object({
   url: z.string().url(),
@@ -53,7 +53,7 @@ type CreateLinkInput = z.infer<typeof schema>;
 
 export async function createLinkAction(input: CreateLinkInput) {
   const { userId } = await auth();
-  if (!userId) return { error: 'Unauthorized' };
+  if (!userId) return { error: "Unauthorized" };
 
   const parsed = schema.safeParse(input);
   if (!parsed.success) return { error: parsed.error.flatten() };
@@ -72,8 +72,8 @@ Database queries are wrapped in helper functions and **must not** be duplicated 
 
 ```ts
 // data/links.ts
-import { db } from '@/db';
-import { links } from '@/db/schema';
+import { db } from "@/db";
+import { links } from "@/db/schema";
 
 export async function createLink(data: {
   url: string;
