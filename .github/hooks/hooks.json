@@ -4,6 +4,7 @@
     "postToolUse": [
       {
         "type": "command",
+        "cmd": "prettier --write .",
         "bash": "npx prettier --write .",
         "powershell": "cmd /c npx prettier --write ."
       }
