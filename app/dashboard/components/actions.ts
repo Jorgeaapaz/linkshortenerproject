@@ -6,7 +6,19 @@ import { createLink, deleteLink, updateLink } from "@/data/links";
 import { revalidatePath } from "next/cache";
 
 const createSchema = z.object({
-  originalUrl: z.string().url({ message: "Please enter a valid URL." }),
+  originalUrl: z.string()
+    .url({ message: "Please enter a valid URL." })
+    .refine(
+      (url) => {
+        try {
+          const { protocol } = new URL(url);
+          return protocol === "http:" || protocol === "https:";
+        } catch {
+          return false;
+        }
+      },
+      { message: "URL must use http or https." }
+    ),
   shortCode: z
     .string()
     .min(1, { message: "Short code is required." })
@@ -19,7 +31,19 @@ const createSchema = z.object({
 
 const updateSchema = z.object({
   id: z.number().int().positive(),
-  originalUrl: z.string().url({ message: "Please enter a valid URL." }),
+  originalUrl: z.string()
+    .url({ message: "Please enter a valid URL." })
+    .refine(
+      (url) => {
+        try {
+          const { protocol } = new URL(url);
+          return protocol === "http:" || protocol === "https:";
+        } catch {
+          return false;
+        }
+      },
+      { message: "URL must use http or https." }
+    ),
   shortCode: z
     .string()
     .min(1, { message: "Short code is required." })
